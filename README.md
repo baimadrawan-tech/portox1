@@ -1,24 +1,81 @@
-# Profile Picture Magic
+# Xalixia — Links & Projects
 
-untuk gambar profienya seperti di gambar
+Website profil dan kumpulan link proyek digital Xalixia. Dibangun dengan **React + Vite + Tailwind CSS v4**.
 
-This project was built with [Lovable](https://lovable.dev).
+## Demo
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5c6d737a-5550-4d4b-966c-3cd74619627a).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+🌐 **Live:** https://xalixia.pages.dev (setelah deploy ke Cloudflare Pages)
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+```bash
+# Install dependencies
+npm install
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# Jalankan dev server
 npm run dev
+
+# Build production
+npm run build
+
+# Preview build lokal
+npm run preview
 ```
+
+## Deploy ke Cloudflare Pages (via GitHub)
+
+1. Push repo ini ke GitHub
+2. Buka [Cloudflare Pages Dashboard](https://dash.cloudflare.com/pages)
+3. Klik **Create a project** → **Connect to Git**
+4. Pilih repo GitHub ini
+5. Konfigurasi build:
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
+   - **Root directory:** `/` (default)
+6. Klik **Save and Deploy**
+
+Cloudflare akan otomatis build & deploy setiap push ke branch `main`.
+
+### Environment Variables (optional)
+
+Tidak ada env vars required untuk project ini.
+
+## Tech Stack
+
+- **React 19** — UI library
+- **Vite 8** — Build tool & dev server
+- **Tailwind CSS v4** — Styling (via `@tailwindcss/vite`)
+- **Lucide React** — Icons
+- **TypeScript** — Type safety
+
+## Project Structure
+
+```
+├── index.html          # HTML entry point
+├── src/
+│   ├── main.tsx        # React bootstrap
+│   ├── App.tsx         # Main component (link hub)
+│   └── styles.css      # Tailwind + custom styles
+├── public/
+│   └── xalixia-profile.png  # Profile photo
+├── vite.config.ts      # Vite config
+└── tsconfig.json       # TypeScript config
+```
+
+## Links Included
+
+| Emoji | Project | Description |
+|-------|---------|-------------|
+| 📤 | Uploader | File upload service |
+| ✦ | Xalixia Tools & AI | Tools & AI chat collection |
+| ▦ | QR & PDF Tools | QR generator + PDF tools |
+| 💸 | Xalixia Wallet | Finance tracker |
+| 🧾 | QRIS Xalixia | Admin support page |
+| 💌 | Appslovv | Couple web app |
+| 🎵 | TikTok Downloader | Download TikTok no watermark |
+| 🖥️ | Jasa Website | Website development services |
+| 💬 | WhatsApp Contact | Direct chat link |
+
+## License
+
+MIT — bebas dipakai & dimodifikasi.
