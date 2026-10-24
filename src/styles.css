@@ -140,6 +140,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     border-color: var(--color-border);
   }
@@ -149,6 +153,7 @@
     color: var(--color-foreground);
     margin: 0;
     font-family: var(--font-body);
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -167,6 +172,7 @@
     background-color: var(--off-white);
     background-image: radial-gradient(color-mix(in srgb, var(--deep-maroon) 9%, transparent) 1px, transparent 1px);
     background-size: 22px 22px;
+    touch-action: pan-y pinch-zoom;
   }
 
   /* Blurred color blobs behind the glass layers */
@@ -178,6 +184,7 @@
     border-radius: 9999px;
     filter: blur(70px);
     pointer-events: none;
+    will-change: transform;
     animation: blob-float 18s ease-in-out infinite;
   }
 
@@ -203,7 +210,6 @@
     border: 2px solid color-mix(in srgb, var(--off-white) 70%, transparent);
     border-radius: 9999px;
     background-color: color-mix(in srgb, var(--off-white) 40%, transparent);
-    backdrop-filter: blur(12px) saturate(140%);
     box-shadow:
       0 10px 24px color-mix(in srgb, var(--deep-maroon) 28%, transparent),
       0 0 0 4px color-mix(in srgb, var(--deep-maroon) 12%, transparent);
@@ -219,10 +225,9 @@
     padding: 0.6rem 0.7rem;
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--deep-maroon) 55%, transparent),
-      color-mix(in srgb, var(--near-black) 42%, transparent)
+      color-mix(in srgb, var(--deep-maroon) 92%, transparent),
+      color-mix(in srgb, var(--near-black) 78%, transparent)
     );
-    backdrop-filter: blur(20px) saturate(160%);
     box-shadow:
       0 10px 30px color-mix(in srgb, var(--near-black) 18%, transparent),
       inset 0 1px 0 color-mix(in srgb, var(--off-white) 25%, transparent);
@@ -233,16 +238,16 @@
   .project-link-maroon {
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--deep-maroon) 55%, transparent),
-      color-mix(in srgb, var(--near-black) 42%, transparent)
+      color-mix(in srgb, var(--deep-maroon) 92%, transparent),
+      color-mix(in srgb, var(--near-black) 78%, transparent)
     );
   }
 
   .project-link:hover {
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--deep-maroon) 72%, transparent),
-      color-mix(in srgb, var(--near-black) 58%, transparent)
+      color-mix(in srgb, var(--deep-maroon) 96%, transparent),
+      color-mix(in srgb, var(--near-black) 88%, transparent)
     );
     transform: translateY(-3px);
     box-shadow:
@@ -270,8 +275,7 @@
     place-items: center;
     border: 1.25px solid color-mix(in srgb, var(--off-white) 45%, transparent);
     border-radius: 0.6rem;
-    background-color: color-mix(in srgb, var(--off-white) 16%, transparent);
-    backdrop-filter: blur(10px);
+    background-color: color-mix(in srgb, var(--off-white) 22%, transparent);
     color: var(--off-white);
     font-size: 0.95rem;
     line-height: 1;
@@ -284,6 +288,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .link-reveal {
     opacity: 1;
     animation: none;

@@ -66,6 +66,9 @@ export default function App() {
             <img
               src="/xalixia-profile.png"
               alt="Foto profil Xalixia"
+              width={96}
+              height={96}
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
